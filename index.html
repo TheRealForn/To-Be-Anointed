@@ -36,7 +36,6 @@ body {
   padding: 50px 30px 80px;
 }
 
-/* HEADER */
 header {
   text-align: center;
   padding-bottom: 30px;
@@ -55,9 +54,21 @@ h1 {
   color: var(--ink-dim);
   font-style: italic;
   font-size: 1.05rem;
+  margin-bottom: 14px;
 }
 
-/* TABS */
+.status-note {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--rule);
+  padding: 4px 12px;
+  margin-top: 6px;
+}
+
 .tabs {
   display: flex;
   flex-wrap: wrap;
@@ -91,11 +102,9 @@ h1 {
   border-bottom-color: var(--gold);
 }
 
-/* PANELS */
 .panel { display: none; }
 .panel.active { display: block; }
 
-/* CONTENT */
 h2 {
   font-size: 1.8rem;
   font-weight: 500;
@@ -112,17 +121,11 @@ h3 {
   margin: 28px 0 10px;
 }
 
-p {
-  margin-bottom: 14px;
-}
+p { margin-bottom: 14px; }
 
-ul, ol {
-  margin: 10px 0 18px 24px;
-}
+ul, ol { margin: 10px 0 18px 24px; }
 
-li {
-  margin-bottom: 6px;
-}
+li { margin-bottom: 6px; }
 
 ul li::marker { color: var(--gold); }
 
@@ -142,10 +145,7 @@ code {
   border-radius: 2px;
 }
 
-/* SIMPLE INFO ROWS */
-.info {
-  margin: 14px 0 20px;
-}
+.info { margin: 14px 0 20px; }
 
 .info-row {
   display: grid;
@@ -166,7 +166,6 @@ code {
   padding-top: 4px;
 }
 
-/* STATUS TAGS */
 .tag {
   display: inline-block;
   font-family: 'JetBrains Mono', monospace;
@@ -187,8 +186,17 @@ footer {
   border-top: 1px solid var(--rule);
   text-align: center;
   color: var(--ink-faint);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.08em;
+  line-height: 1.8;
+}
+
+footer .copyright {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.72rem;
+  color: var(--ink-faint);
   letter-spacing: 0.1em;
 }
 
@@ -206,6 +214,7 @@ footer {
   <header>
     <h1>To Be Anointed</h1>
     <p class="tagline">A holy warrior, a plagued kingdom, three competing truths</p>
+    <div class="status-note">Working Draft · Subject to Change</div>
   </header>
 
   <nav class="tabs">
@@ -218,13 +227,14 @@ footer {
     <button class="tab" data-tab="progress">Progress</button>
   </nav>
 
-  <!-- OVERVIEW -->
   <section class="panel active" id="overview">
     <h2>Overview</h2>
 
-    <p>A 3D pixel art action RPG set in a dark medieval world ravaged by plague. The player is an Ithanian knight — a holy warrior of an ancient sovereign order. Three factions hold competing truths about the plague's origin, and faction allegiance shapes the story's ending.</p>
+    <p>The current direction for <em>To Be Anointed</em> is a 3D pixel art action RPG set in a dark medieval world ravaged by plague. The intent is for three factions to hold competing truths about the plague's origin, with faction allegiance shaping the story's outcome. The player's starting faction and final role are still being explored.</p>
 
-    <h3>Design Pillars</h3>
+    <p><em>Everything in this document is a working concept. Details, names, and systems are still being explored and will change.</em></p>
+
+    <h3>Current Design Pillars</h3>
     <ol>
       <li>Fluid weighty melee combat — every strike has commitment</li>
       <li>Faction allegiance shapes story and world fate</li>
@@ -235,25 +245,25 @@ footer {
 
     <h3>At a Glance</h3>
     <div class="info">
-      <div class="info-row"><div class="info-key">Genre</div><div>Action RPG · Open world</div></div>
-      <div class="info-row"><div class="info-key">Player</div><div>Ithanian knight</div></div>
-      <div class="info-row"><div class="info-key">Setting</div><div>Plague-ravaged kingdom</div></div>
-      <div class="info-row"><div class="info-key">Endings</div><div>Branching, faction-determined</div></div>
+      <div class="info-row"><div class="info-key">Genre</div><div>Action RPG · Open world <em>(working)</em></div></div>
+      <div class="info-row"><div class="info-key">Player</div><div>Knight / warrior <em>(faction allegiance undecided)</em></div></div>
+      <div class="info-row"><div class="info-key">Setting</div><div>Plague-ravaged kingdom <em>(name TBD)</em></div></div>
+      <div class="info-row"><div class="info-key">Endings</div><div>Branching, faction-determined <em>(planned)</em></div></div>
     </div>
   </section>
 
-  <!-- WORLD -->
   <section class="panel" id="world">
     <h2>World</h2>
 
-    <p>A kingdom hollowed out by plague. The plague's origin is contested — each faction holds a different truth about its source.</p>
+    <p>The current concept is a kingdom hollowed out by plague, with the plague's origin contested between factions. Specifics of the setting — geography, history, scale — are still being explored.</p>
 
-    <h3>Atmosphere Modes</h3>
+    <h3>Atmosphere Modes (current concept)</h3>
+    <p>Planning to support multiple atmospheric states tied to regions or story moments:</p>
     <ul>
-      <li><strong>Fog</strong> — the plagued lands (current default)</li>
-      <li><strong>Bright sunny</strong> — Ithanian heartlands</li>
-      <li><strong>Overcast with rain</strong> — stormy moors</li>
-      <li><strong>Night</strong> — late-game, dragon territory</li>
+      <li><strong>Fog</strong> — plagued lands (current default in-engine)</li>
+      <li><strong>Bright sunny</strong> — possible Ithanian heartlands look</li>
+      <li><strong>Overcast with rain</strong> — possible stormy moors look</li>
+      <li><strong>Night</strong> — likely late-game / dragon territory</li>
     </ul>
 
     <h3>Open Questions</h3>
@@ -261,48 +271,50 @@ footer {
       <li>Name the world / kingdom</li>
       <li>Define what "anointed" means in this world</li>
       <li>Name the plague creatures as a collective</li>
+      <li>Scope and structure of the open world</li>
     </ul>
   </section>
 
-  <!-- FACTIONS -->
   <section class="panel" id="factions">
     <h2>Factions</h2>
 
-    <h3>Ithania <span class="tag wip">player start</span></h3>
-    <p>Empire-like sovereign order, religious holy-warrior iconography. Cross motif central to identity. Loyal, militant, ancient. They believe their faith holds the world together against plague corruption.</p>
+    <p><em>Three factions is the current plan. Their identities, names, and roles are being developed. Player starting allegiance is undecided — that's part of why there are three.</em></p>
+
+    <h3>Ithania <span class="tag wip">defined</span></h3>
+    <p>The only faction that's solidly defined so far. Empire-like sovereign order with religious holy-warrior iconography. Cross motif is a central identity element. Tone: loyal, militant, ancient. Their belief is that their faith holds the world together against plague corruption.</p>
     <p><em>Palette: deep red, dark steel, white, gold trim.</em></p>
 
-    <h3>Faction Two <span class="tag tbd">name tbd</span></h3>
-    <p>Rebel renegades who claim to know the plague's true origin. Mistrusted by Ithania, hunted by authorities and the infected alike.</p>
+    <h3>Faction Two <span class="tag tbd">tbd</span></h3>
+    <p>Current concept: rebel renegades who claim to know the plague's true origin, mistrusted by Ithania and hunted by both authorities and the infected. Name, details, and final direction undecided.</p>
 
-    <h3>Faction Three <span class="tag tbd">name tbd</span></h3>
-    <p>Mystic nature-bound order. View the plague as a natural reckoning rather than a curse.</p>
+    <h3>Faction Three <span class="tag tbd">tbd</span></h3>
+    <p>Current concept: a mystic nature-bound order viewing the plague as a natural reckoning rather than a curse. Name, details, and final direction undecided.</p>
   </section>
 
-  <!-- ENEMIES -->
   <section class="panel" id="enemies">
     <h2>Enemies</h2>
 
-    <p>Plague creatures are marked by orange glowing infection spots at joints, eyes, and wounds.</p>
+    <p>The enemy concepts below are working drafts. Names and roles may change.</p>
 
-    <h3>The Hollow</h3>
-    <p>Common shambler. Slow, numerous, introductory. Teaches crowd management.</p>
+    <p>Current visual signature plan: plague creatures marked by orange glowing infection at joints, eyes, and wounds.</p>
 
-    <h3>The Skorn</h3>
-    <p>Fast predator. Aggressive, mid-tier. Punishes poor positioning.</p>
+    <h3>The Hollow <span class="tag wip">working</span></h3>
+    <p>Concept: common shambler, slow, numerous, introductory. Teaches crowd management.</p>
 
-    <h3>The Wretched</h3>
-    <p>Boss tier. Region-defining encounters.</p>
+    <h3>The Skorn <span class="tag wip">working</span></h3>
+    <p>Concept: fast predator, aggressive, mid-tier. Punishes poor positioning.</p>
+
+    <h3>The Wretched <span class="tag wip">working</span></h3>
+    <p>Concept: boss tier, region-defining encounters.</p>
 
     <h3>Dragons</h3>
-    <p>Late-game. Natural and plague-infected variants.</p>
+    <p>Late-game intent. Likely natural and plague-infected variants. Specifics undecided.</p>
   </section>
 
-  <!-- COMBAT -->
   <section class="panel" id="combat">
     <h2>Combat</h2>
 
-    <p>Fluid but never floaty. Every animation commits — no spam, no mashing. The player thinks in terms of windows: when to strike, when to dodge, when to hold.</p>
+    <p>The general feel being aimed for: combat that's fluid but never floaty, with every animation committing — no spam, no mashing. The intent is for the player to think in windows: when to strike, when to dodge, when to hold. Specific systems, mechanics, and balance are very early-stage thinking right now.</p>
 
     <h3>Player Verbs (planned)</h3>
     <ul>
@@ -312,21 +324,23 @@ footer {
       <li>Roll — i-frames, costs stamina</li>
       <li>Sprint</li>
     </ul>
+    <p><em>Final move list, stamina systems, and weapon variety still being figured out.</em></p>
 
-    <h3>Animation Set</h3>
+    <h3>Initial Animation Scaffolding</h3>
+    <p>The animations being built right now are early placeholders to get the basic character movement loop running in-engine. Not final combat work — just the minimum needed to shape the foundation.</p>
     <ul>
       <li>Idle <span class="tag done">done</span></li>
       <li>Walk <span class="tag done">done</span></li>
       <li>Sprint <span class="tag tbd">tbd</span></li>
       <li>Roll <span class="tag tbd">tbd</span></li>
     </ul>
+    <p><em>Real combat animations, weapon-specific movesets, and final character feel come much later, after the broader systems are in place.</em></p>
   </section>
 
-  <!-- TECH -->
   <section class="panel" id="tech">
     <h2>Tech</h2>
 
-    <h3>Stack</h3>
+    <h3>Current Stack</h3>
     <div class="info">
       <div class="info-row"><div class="info-key">Engine</div><div>Godot 4.6.2 .NET</div></div>
       <div class="info-row"><div class="info-key">Modeling</div><div>Blender 4.5 LTS</div></div>
@@ -335,18 +349,17 @@ footer {
       <div class="info-row"><div class="info-key">Language</div><div>GDScript (C# available)</div></div>
     </div>
 
-    <h3>Rendering</h3>
-    <p>3D geometry rendered at 640×360, scaled up so the scene reads as pixel art. Cel shader on environment, outline shader via depth/normal edge detection.</p>
+    <h3>Rendering Approach</h3>
+    <p>3D geometry rendered at 640×360, scaled up so the scene reads as pixel art. Cel shader on environment, outline shader via depth/normal edge detection. Inspired by t3ssel8r's approach.</p>
 
-    <h3>Pipeline</h3>
+    <h3>Working Pipeline</h3>
     <p>Character animation: <code>Blender → FBX → Cascadeur → FBX → Godot</code>. FBX throughout — preserves skinning correctly.</p>
   </section>
 
-  <!-- PROGRESS -->
   <section class="panel" id="progress">
     <h2>Progress</h2>
 
-    <h3>Done</h3>
+    <h3>Done So Far</h3>
     <ul>
       <li>Player movement (8-directional, gravity, collision)</li>
       <li>Camera follow (low three-quarter orthographic)</li>
@@ -379,7 +392,9 @@ footer {
   </section>
 
   <footer>
-    To Be Anointed · GDD · Living Document
+    To Be Anointed · Living Design Document
+    <span class="copyright">© 2026 TheRealForn. All rights reserved.<br>
+    This document and the concepts within are the property of the author. Not for redistribution or commercial use.</span>
   </footer>
 
 </div>
