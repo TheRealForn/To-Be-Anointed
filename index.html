@@ -331,8 +331,8 @@ footer .copyright {
     <ul>
       <li>Idle <span class="tag done">done</span></li>
       <li>Walk <span class="tag done">done</span></li>
-      <li>Sprint <span class="tag tbd">tbd</span></li>
-      <li>Roll <span class="tag tbd">tbd</span></li>
+      <li>Sprint <span class="tag done">done</span></li>
+      <li>Roll <span class="tag done">done</span></li>
     </ul>
     <p><em>Real combat animations, weapon-specific movesets, and final character feel come much later, after the broader systems are in place.</em></p>
   </section>
@@ -366,26 +366,26 @@ footer .copyright {
       <li>Shader pipeline (cel, outline, pixel-snap at 640×360)</li>
       <li>Environment first pass</li>
       <li>Knight modeled, rigged, walk animation working in scene</li>
-      <li>Idle animation imported</li>
-    </ul>
-
-    <h3>Current Work</h3>
-    <ul>
-      <li>Armour modeling refinement</li>
-      <li>Project reorganization (cleaner folder structure, player as own scene)</li>
+      <li>Idle, Walk, Sprint, Roll animations imported and working</li>
+      <li>AnimationTree state machine set up with all four states</li>
+      <li>Sprint (Shift) and Roll (Space) input actions configured</li>
+      <li>WASD + arrow key movement</li>
+      <li>Root motion set up for roll animation</li>
+      <li>Grass scattered across 100×100 test world</li>
     </ul>
 
     <h3>Next Up</h3>
     <ol>
+      <li>Model and rig a sword, attach to knight's hand bone</li>
+      <li>Idle and walk animations while holding sword</li>
+      <li>Basic attack animation (light attack)</li>
       <li>UV unwrap and texture the knight</li>
-      <li>Sprint and Roll animations</li>
-      <li>AnimationTree state machine in Godot</li>
     </ol>
 
     <h3>Known Issues</h3>
     <ul>
       <li>Wall asset brick scale oversized for human-scale character</li>
-      <li>Walk animation foot-slide — needs speed matching</li>
+      <li>Idle animation transition snap — first frame pose differs from walk end pose</li>
       <li>Binbun ground shader breaks under non-daytime sky settings</li>
       <li>Cascadeur arm rotation imperfect — working around with IK</li>
     </ul>
