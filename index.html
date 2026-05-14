@@ -257,6 +257,12 @@ footer .copyright {
 
     <p>The current concept is a kingdom hollowed out by plague, with the plague's origin contested between factions. Specifics of the setting — geography, history, scale — are still being explored.</p>
 
+    <h3>The Black Death <span class="tag wip">name confirmed</span></h3>
+    <p>The plague in this world is called <strong>The Black Death</strong>. More research and world story development is in the works. The real historical Black Death will serve as a loose reference for building the world — not followed completely, but used to ground the setting with weight and authenticity. Research into medieval plague culture, social upheaval, religious impact, and iconography is planned before deeper world story work begins.</p>
+
+    <h3>Environment Design Intent</h3>
+    <p>The world should have a meaningful environment — not just backdrop. Specifically for combat, the environment should matter: throwable objects, destructible elements, hazards, positioning opportunities. Dark, plague-ravaged spaces should feel dangerous and reactive. More ideas to be developed as combat systems mature.</p>
+
     <h3>Atmosphere Modes (current concept)</h3>
     <p>Planning to support multiple atmospheric states tied to regions or story moments:</p>
     <ul>
@@ -272,6 +278,7 @@ footer .copyright {
       <li>Define what "anointed" means in this world</li>
       <li>Name the plague creatures as a collective</li>
       <li>Scope and structure of the open world</li>
+      <li>Research Black Death history for world building reference</li>
     </ul>
   </section>
 
@@ -344,7 +351,10 @@ footer .copyright {
     <ul>
       <li>Weapon smear effect — a smear/trail system for combat weapons during swings, style reference t3ssel8r. May require custom built solution.</li>
       <li>Footstep-synced dust particles — requires animation signals on foot strike frames, positional dust burst per foot</li>
+      <li>Camera system — zoom (mouse scroll) and pan/rotate around player</li>
+      <li>Mounted system — horse and player as separate scenes. Player attaches to saddle bone on horse via BoneAttachment3D when mounted. Player has separate mounted animations (idle, trot, gallop, mount, dismount) animated in Cascadeur using horse as visual reference only. Player input drives horse movement and animation. Horse needs dedicated saddle bone added in Blender. Free horse model sourced (Henry S, CC Attribution, commercial use allowed).</li>
       <li>Horses — mounted travel, horse model/rig/animations, mount/dismount system, potential mounted combat</li>
+      <li>Environmental combat — throwable objects, destructible elements, positional hazards. Environment should be meaningful in combat, not just backdrop.</li>
       <li>Cape physics — cloth simulation via bone constraints or SoftBody3D</li>
     </ul>
   </section>
