@@ -333,8 +333,20 @@ footer .copyright {
       <li>Walk <span class="tag done">done</span></li>
       <li>Sprint <span class="tag done">done</span></li>
       <li>Roll <span class="tag done">done</span></li>
+      <li>Idle (sword equipped) <span class="tag done">done</span></li>
+      <li>Walk (sword equipped) <span class="tag done">done</span></li>
+      <li>Sprint (sword equipped) <span class="tag done">done</span></li>
+      <li>Light attack — first pass <span class="tag wip">needs work</span></li>
     </ul>
-    <p><em>Real combat animations, weapon-specific movesets, and final character feel come much later, after the broader systems are in place.</em></p>
+    <p><em>First attack animation is a very early placeholder — needs significant refinement. Combat animation is a major area of future development. Weapon-specific movesets, combo systems, and final character feel come much later.</em></p>
+
+    <h3>Future Systems (noted)</h3>
+    <ul>
+      <li>Weapon smear effect — a smear/trail system for combat weapons during swings, style reference t3ssel8r. May require custom built solution.</li>
+      <li>Footstep-synced dust particles — requires animation signals on foot strike frames, positional dust burst per foot</li>
+      <li>Horses — mounted travel, horse model/rig/animations, mount/dismount system, potential mounted combat</li>
+      <li>Cape physics — cloth simulation via bone constraints or SoftBody3D</li>
+    </ul>
   </section>
 
   <section class="panel" id="tech">
@@ -350,7 +362,7 @@ footer .copyright {
     </div>
 
     <h3>Rendering Approach</h3>
-    <p>3D geometry rendered at 640×360, scaled up so the scene reads as pixel art. Cel shader on environment, outline shader via depth/normal edge detection. Inspired by t3ssel8r's approach.</p>
+    <p>3D geometry rendered at ~853×480 via SubViewport with Stretch Shrink of 3, scaled up so the scene reads as pixel art. Nearest neighbor filtering for crisp pixels. Cel shader on environment, outline shader via depth/normal edge detection. Inspired by t3ssel8r's approach.</p>
 
     <h3>Working Pipeline</h3>
     <p>Character animation: <code>Blender → FBX → Cascadeur → FBX → Godot</code>. FBX throughout — preserves skinning correctly.</p>
@@ -363,23 +375,26 @@ footer .copyright {
     <ul>
       <li>Player movement (8-directional, gravity, collision)</li>
       <li>Camera follow (low three-quarter orthographic)</li>
-      <li>Shader pipeline (cel, outline, pixel-snap at 640×360)</li>
+      <li>Shader pipeline (cel, outline, pixel-snap via SubViewport at ~853×480)</li>
       <li>Environment first pass</li>
-      <li>Knight modeled, rigged, walk animation working in scene</li>
-      <li>Idle, Walk, Sprint, Roll animations imported and working</li>
-      <li>AnimationTree state machine set up with all four states</li>
-      <li>Sprint (Shift) and Roll (Space) input actions configured</li>
-      <li>WASD + arrow key movement</li>
-      <li>Root motion set up for roll animation</li>
+      <li>Knight modeled, rigged, all base animations working in scene</li>
+      <li>Idle, Walk, Sprint, Roll, Idle_Sword, Walk_Sword, Sprint_Sword animations</li>
+      <li>First attack animation — basic placeholder, needs significant work</li>
+      <li>AnimationTree state machine with all states connected</li>
+      <li>WASD + arrow key movement, Sprint (Shift), Roll (Space), Attack (LMB)</li>
+      <li>Sword equip system (E key) — sword visible/hidden, animations swap</li>
+      <li>Longsword modeled and attached to hand bone via BoneAttachment3D</li>
+      <li>Root motion set up for roll and attack animations</li>
       <li>Grass scattered across 100×100 test world</li>
+      <li>SubViewport rendering setup with proper pixel art scaling</li>
     </ul>
 
     <h3>Next Up</h3>
     <ol>
-      <li>Model and rig a sword, attach to knight's hand bone</li>
-      <li>Idle and walk animations while holding sword</li>
-      <li>Basic attack animation (light attack)</li>
       <li>UV unwrap and texture the knight</li>
+      <li>Refine attack animation — needs weight, commitment, and proper arc</li>
+      <li>Begin broader combat system design</li>
+      <li>Sword smear effect — custom system TBD, style reference t3ssel8r</li>
     </ol>
 
     <h3>Known Issues</h3>
